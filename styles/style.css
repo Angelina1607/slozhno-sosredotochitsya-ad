@@ -8,21 +8,51 @@
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 }
 
+.decoration-element::before {
+  content: 'REC';
+  color: var(--accent-color);
+}
+
+.decoration-element::after {
+  content: '';
+  display: inline-block;
+  margin-inline-start: 10px;
+  min-width: 9px;
+  min-height: 9px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  box-shadow: 0 0 6px var(--accent-color);
+}
+
 .header {
   display: grid;
 }
 
+.header__theme-menu-button {
+  color: var(--accent-color);
+  text-transform: lowercase;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  font-weight: normal;
+  width: 70px;
+  height: 26px;
+}
 
+.header__theme-menu-button_active {
+  border: solid 1px var(--accent-color);
+}
 
 .heading {
   line-height: 82.5%;
   color: var(--heading-color);
   text-shadow: 4px 4px 0 var(--accent-color);
+  margin-top: 50px;
 }
 
 .title-decor {
   background-color: var(--accent-color);
-  color: var(--text-color);
+  color: var(--text-accent-color);
   font-weight: bold;
   font-size: 18px;
   line-height: 1.3;
