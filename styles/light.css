@@ -10,20 +10,25 @@
     чем стили в медиазапросе предпочтений пользователя
   */
   --text-color: #353430;
+  --decoration-element-color: #353430;
   --accent-color: #FF8DCB;
   --heading-color: #FFC2E6;
   --background-color: #FFF1F7;
+  --background-image: url(../images/cover-image-light.png);
 }
 
 .theme-light .page {
+  background-color: var(--background-color);
   /* Вам также нужно будет написать ряд подобных селекторов */
 }
 
 @media (prefers-color-scheme: light) {
   :root {
     --text-color: #353430;
+    --decoration-element-color: #353430;
     --accent-color: #FF8DCB;
     --heading-color: #FFC2E6;
-    --background-color: #FFF1F7;    
+    --background-color: #FFF1F7;
+    --background-image: url(../images/cover-image-light.png);   
   }
 }

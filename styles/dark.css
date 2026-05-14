@@ -7,12 +7,35 @@
 :root.theme-dark {
   --text-color: #F1B2CE;
   --text-accent-color: #000028;
+  --decoration-element-color: #FF0070;
   --accent-color: #FF0070;
   --heading-color: #DB00FF;
   --background-color: #000028;
+  --background-image: url(../images/cover-image-dark.png);
 }
 
 .theme-dark .page {
-  background-color: var(--background-color);
   /* Вам также нужно будет написать ряд подобных селекторов */
+}
+
+.theme-dark .decoration-element {
+  position: absolute;
+  justify-self: end;
+  margin: 10px 19px 0 0;
+}
+
+.theme-dark .decoration-element::before {
+  content: 'REC';
+  color: var(--accent-color);
+}
+
+.theme-dark .decoration-element::after {
+  content: '';
+  display: inline-block;
+  margin-inline-start: 10px;
+  min-width: 9px;
+  min-height: 9px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  box-shadow: 0 0 6px var(--accent-color);
 }
