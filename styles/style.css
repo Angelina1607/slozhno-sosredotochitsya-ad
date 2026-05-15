@@ -9,8 +9,8 @@ html::-webkit-scrollbar {
   color: var(--text-color);
   background-color: var(--background-color);
   background-image: var(--background-image);
-  background-attachment: fixed;
   background-position: center bottom;
+  background-attachment: fixed;
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
 }
 
@@ -24,7 +24,6 @@ html::-webkit-scrollbar {
   width: 25px;
   height: 25px;
   position: absolute;
-  margin-inline-end: 10px;
   margin-block-start: 10px;
   justify-self: end;
   align-self: start;
@@ -38,12 +37,36 @@ html::-webkit-scrollbar {
   width: 25px;
   height: 25px;
   position: absolute;
-  margin-inline-start: 10px;
   margin-block-end: 10px;
   justify-self: start;
   align-self: end;
   border-bottom: solid 1px var(--decoration-element-color);
   border-left: solid 1px var(--decoration-element-color);
+}
+
+.decoration-element {
+  position: absolute;
+  justify-self: end;
+  margin: 10px 9px 0 0;
+}
+
+.decoration-element::before {
+  content: 'REC';
+  display: inline-block;
+  height: 26px;
+  align-content: center;
+  margin-inline-end: 10px;
+  color: var(--accent-color);
+}
+
+.decoration-element::after {
+  content: '';
+  display: inline-block;
+  min-width: 9px;
+  min-height: 9px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  box-shadow: 0 0 6px var(--accent-color);
 }
 
 .header__theme-menu-button {
@@ -98,6 +121,10 @@ html::-webkit-scrollbar {
   font-weight: normal;
 }
 
+.intro-section {
+  display: grid;
+}
+
 .images-set {
   display: grid;
 }
@@ -136,28 +163,51 @@ html::-webkit-scrollbar {
 
 
 
+
+
+
+
+
+
+
+
 @media (width<768px) {
+  .page {
+    padding: 0 10px;
+  }
   .heading {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-    margin-top: clamp(65px, -38.05px + 27.48vw, 173px);
+    margin: clamp(65px, -38.05px + 27.48vw, 173px) 0 clamp(55px, -47.10px + 27.23vw, 162px);
   }
   .heading-text {
     width: clamp(355px, 346.41px + 2.29vw, 364px);
-    margin-top: clamp(55px, -47.10px + 27.23vw, 162px);
-    margin-bottom: clamp(66px, -45.64px + 29.77vw, 183px);
-    margin-right: 10px;
+    margin: 0 0 clamp(66px, -45.64px + 29.77vw, 183px) 0;
   }
   .header__theme-menu-list {
     margin-top: clamp(75px, -36.64px + 29.77vw, 192px)
   }
   .main {
-    margin: 40px 0 40px;
+    margin: clamp(40px, 20.92px + 5.09vw, 60px) 0 clamp(40px, 20.92px + 5.09vw, 60px);
+  }
+  .section-header {
+    
+  }
+  .images-set {
+    gap: 10px;
+  }
+  .sunset-image, .ice-cream-image, .tape-image, .street-image, .books-image {
+    width: 100%;
   }
 }
 
-.intro-section {
-  display: grid;
-}
+
+
+
+
+
+
+
+
 
 @media (768px<=width<1024px) {
   .heading {
@@ -192,7 +242,18 @@ html::-webkit-scrollbar {
   }
 }
 
+
+
+
+
+
+
+
+
 @media (width>=1024px) {
+  .page {
+    padding: 0 20px;
+  }
   .heading {
     font-size: 157px;
     margin: 0 0 114px;
@@ -291,7 +352,6 @@ html::-webkit-scrollbar {
   .books-image {
     width: 100%;
     height: 100%;
-
   }
   .footer-text {
     padding: 319px 0;
