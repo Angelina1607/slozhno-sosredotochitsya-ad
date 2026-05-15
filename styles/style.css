@@ -1,4 +1,3 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 html::-webkit-scrollbar {
   width: 0;
 }
@@ -11,14 +10,30 @@ html::-webkit-scrollbar {
   background-image: var(--background-image);
   background-position: center bottom;
   background-attachment: fixed;
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+}
+
+.link {
+  text-decoration: none;
+  text-shadow: 2.2px 1.7px 0 var(--accent-color);
+}
+
+.link:hover {
+  border-bottom: solid 1.5px var(--text-color);
+}
+
+.link:focus {
+  outline: solid 1px var(--text-color);
+}
+
+.link:focus-visible {
+  outline: solid 1px var(--text-color);
 }
 
 .header {
   display: grid;
 }
 
-.header::before {
+.decorated-zone::before {
   content: '';
   display: block;
   width: 25px;
@@ -31,7 +46,7 @@ html::-webkit-scrollbar {
   border-right: solid 1px var(--decoration-element-color);
 }
 
-.header::after {
+.decorated-zone::after {
   content: '';
   display: block;
   width: 25px;
@@ -71,6 +86,8 @@ html::-webkit-scrollbar {
 
 .header__theme-menu-button {
   color: var(--accent-color);
+  text-align: center;
+  line-height: 1;
   text-transform: lowercase;
   background-color: transparent;
   border: none;
@@ -78,6 +95,22 @@ html::-webkit-scrollbar {
   font-weight: normal;
   width: 70px;
   height: 26px;
+}
+
+.header__theme-menu-button:hover {
+  border: solid 1px var(--transparent-accent-color);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+  padding-bottom: 1px;
+  border-bottom: solid 1px var(--accent-color);
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  padding-bottom: 1px;
+  border-bottom: solid 1px var(--accent-color);
 }
 
 .header__theme-menu-button_active {
@@ -113,15 +146,21 @@ html::-webkit-scrollbar {
   font-weight: bold;
   font-size: 18px;
   line-height: 1.3;
+  margin: 20px 0 10px;
 }
 
 .advice-title {
   background-color: var(--accent-color);
   color: var(--text-accent-color);
   font-weight: normal;
+  margin: 20px 0 10px;
 }
 
 .intro-section {
+  display: grid;
+}
+
+.advice-section {
   display: grid;
 }
 
@@ -129,47 +168,13 @@ html::-webkit-scrollbar {
   display: grid;
 }
 
+.sunset-image, .ice-cream-image, .tape-image, .street-image, .books-image {
+    width: 100%;
+}
+
 .footer-text {
   text-align: center;
 }
-
-.footer::before {
-  content: '';
-  display: block;
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  margin-inline-end: 10px;
-  margin-block-start: 10px;
-  justify-self: end;
-  align-self: start;
-  border-top: solid 1px var(--decoration-element-color);
-  border-right: solid 1px var(--decoration-element-color);
-}
-
-.footer::after {
-  content: '';
-  display: block;
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  margin-inline-start: 10px;
-  margin-block-end: 10px;
-  justify-self: start;
-  align-self: end;
-  border-bottom: solid 1px var(--decoration-element-color);
-  border-left: solid 1px var(--decoration-element-color);
-}
-
-
-
-
-
-
-
-
-
-
 
 @media (width<768px) {
   .page {
@@ -187,68 +192,92 @@ html::-webkit-scrollbar {
     margin-top: clamp(75px, -36.64px + 29.77vw, 192px)
   }
   .main {
-    margin: clamp(40px, 20.92px + 5.09vw, 60px) 0 clamp(40px, 20.92px + 5.09vw, 60px);
+    margin: 40px 0;
   }
-  .section-header {
-    
+  .section {
+    margin-bottom: 50px;
+  }
+  .images-section {
+    margin-bottom: 0;
   }
   .images-set {
     gap: 10px;
   }
-  .sunset-image, .ice-cream-image, .tape-image, .street-image, .books-image {
-    width: 100%;
+  .footer-text {
+    margin: 0;
+    padding: 286px 0 285px;
   }
 }
 
-
-
-
-
-
-
-
-
-
 @media (768px<=width<1024px) {
+  .page {
+    padding: 0 20px;
+  }
   .heading {
+    margin-inline-start: -20px;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     margin-top: clamp(173px, -127.00px + 39.06vw, 273px);
   }
   .heading-text {
     width: clamp(364px, -17.00px + 49.61vw, 491px);
-    margin-right: 20px;
-    margin-top: clamp(114px, 306.00px + -18.75vw, 162px);
-    margin-bottom: clamp(66px, -45.64px + 29.77vw, 183px);
+    margin: clamp(114px, 306.00px + -18.75vw, 162px) 0 clamp(134px, 330.00px + -19.14vw, 183px);
   }
   .header__theme-menu-list {
-    justify-self: center;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
+    margin-top: 192px;
   }
   .main {
-    margin: 60px 20px 60px 0;
+    margin: 60px 0;
   }
-  .intro-section {
+  .section {
+    margin-bottom: 80px;
+  }
+  .section-header {
+    margin-bottom: 20px;
+  }
+  .images-section {
+    margin-bottom: 0;
+  }
+  .intro-section, .advice-section {
     grid-template-columns: 1fr clamp(472px, -56.00px + 68.75vw, 648px);
     gap: 20px;
   }
-  .intro-section-text {
-    grid-column-start: 2;
+  .main .title-decor:first-of-type {
+    margin-top: 0;
   }
-  .intro-section-title {
-    grid-column-start: 2;
+  .images-section__title {
+    margin-bottom: 20px;
+  }
+  .images-set {
+    gap: 20px;
+    grid-auto-flow: dense;
+    grid-template-rows: clamp(192px, -12.00px + 26.56vw, 260px) clamp(230px, -25.00px + 33.20vw, 315px) clamp(318px, -27.00px + 44.92vw, 433px);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+      "sunset sunset ice-cream"
+      "tape books ice-cream"
+      "tape street street";
+  }
+  .sunset-image, .ice-cream-image, .tape-image, .street-image, .books-image {
+    height: 100%;
+    object-fit: cover;
+  }
+  .sunset-image {
+    grid-area: sunset;
+  }
+  .ice-cream-image {
+    grid-area: ice-cream;
+  }
+  .tape-image {
+    grid-area: tape;
+  }
+  .street-image {
+    grid-area: street;
+  }
+  .footer .heading {
+    margin: 0;
+    padding: 463px 0;
   }
 }
-
-
-
-
-
-
-
-
 
 @media (width>=1024px) {
   .page {
@@ -260,7 +289,7 @@ html::-webkit-scrollbar {
   }
   .heading-text {
     width: 491px;
-    margin: 0 20px 134px 0;
+    margin: 0 0 134px 0;
   }
   .header__theme-menu-list {
     justify-self: center;
@@ -270,12 +299,23 @@ html::-webkit-scrollbar {
     gap: 10px;
   }
   .main {
-    margin: 60px 20px 60px 20px;
+    margin: 60px 0;
+  }
+  .main .title-decor:first-of-type {
+    margin-top: 0;
+  }
+  .section {
+    margin-bottom: 80px;
+  }
+  .images-section {
+    margin-bottom: 0;
+  }
+  .intro-section, .advice-section {
+    grid-template-columns: 315px 1fr;
+    gap: 20px;
   }
   .intro-section {
-    grid-template-columns: 315px 1fr;
     grid-template-rows: repeat(4, fit-content);
-    gap: 20px;
   }
   .section-header {
     grid-row: span 2;
@@ -290,21 +330,19 @@ html::-webkit-scrollbar {
     margin: 80px 0;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
     gap: 20px;
   }
   .content-section-title {
     grid-column: span 3;
   }
   .content-section__article-title {
-    grid-row: 3;
+    margin-top: 0;
+    grid-row: 2;
   }
   .advice-section {
     margin-bottom: 80px;
-    display: grid;
-    grid-template-columns: 315px 1fr;
     grid-template-rows: repeat(3, auto);
-    gap: 20px;
   }
   .advice-text {
     grid-column: 2;
@@ -325,37 +363,26 @@ html::-webkit-scrollbar {
       "tape books ice-cream"
       "tape street street";
   }
-  .sunset-image {
-    width: 100%;
+  .sunset-image, .ice-cream-image, .tape-image, .street-image, .books-image {
     height: 100%;
     object-fit: cover;
+  }
+  .sunset-image {
     grid-area: sunset;
   }
   .ice-cream-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
     grid-area: ice-cream;
   }
   .tape-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
     grid-area: tape;
   }
   .street-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
     grid-area: street;
   }
   .books-image {
-    width: 100%;
     height: 100%;
   }
   .footer-text {
     padding: 319px 0;
   }
 }
-
-
