@@ -3,7 +3,7 @@ html::-webkit-scrollbar {
 }
 
 .page {
-  font-size: 16px;
+  font-size: 18px;
   font-family: 'IBM Plex mono', sans-serif;
   color: var(--text-color);
   background-color: var(--background-color);
@@ -167,6 +167,11 @@ html::-webkit-scrollbar {
   font-weight: regular;
 }
 
+.content-section {
+  display: grid;
+  gap: 20px;
+}
+
 .advice-section {
   display: grid;
 }
@@ -237,6 +242,9 @@ html::-webkit-scrollbar {
   }
   .section-header {
     margin-bottom: 20px;
+  }
+  .content-section-title {
+    margin-bottom: 0;
   }
   .images-section {
     margin-bottom: 0;
@@ -326,10 +334,8 @@ html::-webkit-scrollbar {
   }
   .content-section {
     margin: 80px 0;
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(2, auto);
-    gap: 20px;
   }
   .content-section-title {
     grid-column: span 3;
