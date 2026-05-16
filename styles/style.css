@@ -172,6 +172,10 @@ html::-webkit-scrollbar {
     width: 100%;
 }
 
+.footer {
+  height: 100%;
+}
+
 .footer-text {
   text-align: center;
 }
