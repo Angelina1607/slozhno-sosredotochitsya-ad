@@ -222,7 +222,6 @@ html::-webkit-scrollbar {
   .heading {
     margin-inline-start: -20px;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-
   }
   .heading-text {
     width: clamp(364px, -17.00px + 49.61vw, 491px);
@@ -381,5 +380,4 @@ html::-webkit-scrollbar {
   .books-image {
     height: 100%;
   }
-
 }
