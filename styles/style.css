@@ -31,6 +31,19 @@ html::-webkit-scrollbar {
 
 .header {
   display: grid;
+  height: 100vh;
+}
+
+.decorated-zone::after {
+  content: '';
+  display: block;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  margin-block-end: 10px;
+  align-self: end;
+  border-left: solid 1px var(--decoration-element-color);
+  border-bottom: solid 1px var(--decoration-element-color);
 }
 
 .decorated-zone::before {
@@ -41,22 +54,8 @@ html::-webkit-scrollbar {
   position: absolute;
   margin-block-start: 10px;
   justify-self: end;
-  align-self: start;
-  border-top: solid 1px var(--decoration-element-color);
   border-right: solid 1px var(--decoration-element-color);
-}
-
-.decorated-zone::after {
-  content: '';
-  display: block;
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  margin-block-end: 10px;
-  justify-self: start;
-  align-self: end;
-  border-bottom: solid 1px var(--decoration-element-color);
-  border-left: solid 1px var(--decoration-element-color);
+  border-top: solid 1px var(--decoration-element-color);
 }
 
 .decoration-element {
@@ -85,7 +84,7 @@ html::-webkit-scrollbar {
 }
 
 .header__theme-menu-button {
-  color: var(--accent-color);
+  color: var(--decoration-element-color);
   text-align: center;
   line-height: 1;
   text-transform: lowercase;
@@ -104,17 +103,17 @@ html::-webkit-scrollbar {
 .header__theme-menu-button:focus {
   outline: none;
   padding-bottom: 1px;
-  border-bottom: solid 1px var(--accent-color);
+  border-bottom: solid 1px var(--decoration-element-color);
 }
 
 .header__theme-menu-button:focus-visible {
   outline: none;
   padding-bottom: 1px;
-  border-bottom: solid 1px var(--accent-color);
+  border-bottom: solid 1px var(--decoration-element-color);
 }
 
 .header__theme-menu-button_active {
-  border: solid 1px var(--accent-color);
+  border: solid 1px var(--decoration-element-color);
 }
 
 .heading {
@@ -122,6 +121,7 @@ html::-webkit-scrollbar {
   font-weight: bold;
   color: var(--heading-color);
   text-shadow: 4px 4px 0 var(--accent-color);
+  align-self: center;
 }
 
 .header__theme-menu-list {
@@ -133,6 +133,7 @@ html::-webkit-scrollbar {
 
 .heading-text {
   justify-self: end;
+  height: fit-content;
 }
 
 .section-header {
@@ -160,6 +161,12 @@ html::-webkit-scrollbar {
   display: grid;
 }
 
+.intro-section-text {
+  font-size: 18px;
+  line-height: 1.3;
+  font-weight: regular;
+}
+
 .advice-section {
   display: grid;
 }
@@ -173,11 +180,12 @@ html::-webkit-scrollbar {
 }
 
 .footer {
-  height: 100%;
+  height: 100vh;
+  display: grid;
 }
 
 .footer-text {
-  text-align: center;
+  justify-self: center;
 }
 
 @media (width<768px) {
@@ -186,11 +194,9 @@ html::-webkit-scrollbar {
   }
   .heading {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-    margin: clamp(65px, -38.05px + 27.48vw, 173px) 0 clamp(55px, -47.10px + 27.23vw, 162px);
   }
   .heading-text {
     width: clamp(355px, 346.41px + 2.29vw, 364px);
-    margin: 0 0 clamp(66px, -45.64px + 29.77vw, 183px) 0;
   }
   .header__theme-menu-list {
     margin-top: clamp(75px, -36.64px + 29.77vw, 192px)
@@ -207,10 +213,6 @@ html::-webkit-scrollbar {
   .images-set {
     gap: 10px;
   }
-  .footer-text {
-    margin: 0;
-    padding: 286px 0 285px;
-  }
 }
 
 @media (768px<=width<1024px) {
@@ -220,11 +222,10 @@ html::-webkit-scrollbar {
   .heading {
     margin-inline-start: -20px;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    margin-top: clamp(173px, -127.00px + 39.06vw, 273px);
+
   }
   .heading-text {
     width: clamp(364px, -17.00px + 49.61vw, 491px);
-    margin: clamp(114px, 306.00px + -18.75vw, 162px) 0 clamp(134px, 330.00px + -19.14vw, 183px);
   }
   .header__theme-menu-list {
     margin-top: 192px;
@@ -277,10 +278,6 @@ html::-webkit-scrollbar {
   .street-image {
     grid-area: street;
   }
-  .footer .heading {
-    margin: 0;
-    padding: 463px 0;
-  }
 }
 
 @media (width>=1024px) {
@@ -289,15 +286,13 @@ html::-webkit-scrollbar {
   }
   .heading {
     font-size: 157px;
-    margin: 0 0 114px;
   }
   .heading-text {
     width: 491px;
-    margin: 0 0 134px 0;
   }
   .header__theme-menu-list {
     justify-self: center;
-    margin: 20px 0 273px;
+    margin-top: 20px;
     display: flex;
     flex-direction: row;
     gap: 10px;
@@ -386,7 +381,5 @@ html::-webkit-scrollbar {
   .books-image {
     height: 100%;
   }
-  .footer-text {
-    padding: 319px 0;
-  }
+
 }
