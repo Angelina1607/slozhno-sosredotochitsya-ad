@@ -31,6 +31,7 @@ html::-webkit-scrollbar {
 
 .header {
   display: grid;
+  grid-template-rows: repeat(3, 1fr);
   height: 100vh;
 }
 
@@ -200,7 +201,7 @@ html::-webkit-scrollbar {
 }
 
 @media (width<768px) {
-  .page {
+  .header, .main, .footer {
     padding: 0 10px;
   }
   .heading {
@@ -236,7 +237,7 @@ html::-webkit-scrollbar {
 }
 
 @media (768px<=width<1024px) {
-  .page {
+  .header, .main, .footer {
     padding: 0 20px;
   }
   .heading {
@@ -301,7 +302,7 @@ html::-webkit-scrollbar {
 }
 
 @media (width>=1024px) {
-  .page {
+  .header, .main, .footer {
     padding: 0 20px;
   }
   .heading {
