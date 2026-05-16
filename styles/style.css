@@ -134,6 +134,7 @@ html::-webkit-scrollbar {
 
 .heading-text {
   justify-self: end;
+  align-self: center;
   height: fit-content;
 }
 
