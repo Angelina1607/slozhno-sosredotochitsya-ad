@@ -209,7 +209,7 @@ html::-webkit-scrollbar {
     padding: 0 10px;
   }
   .header {
-    grid-template-rows: clamp(173px, 61.36px + 29.77vw, 290px) clamp(312px, 195.59px + 31.04vw, 434px) clamp(183px, 71.36px + 29.77vw, 300px);
+    grid-template-rows: 0.26fr 0.47fr 0.27fr;
   }
   .heading {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
@@ -248,7 +248,7 @@ html::-webkit-scrollbar {
     padding: 0 20px;
   }
   .header {
-    grid-template-rows: clamp(173px, 641.00px + -45.70vw, 290px) clamp(434px, 185.00px + 32.42vw, 517px) clamp(205px, 585.00px + -37.11vw, 300px);
+    grid-template-rows: 0.28fr 0.42fr 0.3fr;
   }
   .heading {
     margin-inline-start: -20px;
