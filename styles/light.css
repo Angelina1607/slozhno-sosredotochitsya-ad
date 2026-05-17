@@ -13,10 +13,6 @@
   display: none;
 }
 
-.theme-light .decoration-element {
-  display: none;
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     --text-color: #353430;
