@@ -165,6 +165,10 @@ html::-webkit-scrollbar {
   grid-column: 1;
 }
 
+.advice-section .section__article-title {
+  margin-bottom: 20px;
+}
+
 .section__article-title {
   margin-bottom: 10px;
 }
@@ -225,9 +229,6 @@ html::-webkit-scrollbar {
   .intro-section, .advice-section {
     grid-template-columns: 1fr;
   }
-  .advice-section .section__article-title {
-    margin-bottom: 20px;
-  }
   .content-section__title {
     grid-column: 1/-1;
   }
@@ -258,6 +259,15 @@ html::-webkit-scrollbar {
   }
   .header__theme-menu-list {
     margin-top: clamp(75px, 543.00px + -45.70vw, 192px);
+  }
+  .decorated-zone::before {
+    margin-block-start: 20px;
+  }
+  .decorated-zone::after {
+    margin-block-end: 20px;
+  }
+  .decoration-element {
+    margin: 20px 9px 0 0;
   }
   .main {
     margin: 60px 0;
@@ -315,6 +325,7 @@ html::-webkit-scrollbar {
     padding: 0 20px;
   }
   .heading {
+    margin-inline-start: -20px;
     font-size: 157px;
   }
   .heading-text {
@@ -326,6 +337,15 @@ html::-webkit-scrollbar {
     display: flex;
     flex-direction: row;
     gap: 10px;
+  }
+  .decorated-zone::before {
+    margin-block-start: 20px;
+  }
+  .decorated-zone::after {
+    margin-block-end: 20px;
+  }
+  .decoration-element {
+    margin: 20px 9px 0 0;
   }
   .main {
     margin: 60px 0;
