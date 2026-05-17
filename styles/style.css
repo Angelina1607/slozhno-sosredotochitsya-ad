@@ -225,6 +225,9 @@ html::-webkit-scrollbar {
   .intro-section, .advice-section {
     grid-template-columns: 1fr;
   }
+  .advice-section .section__article-title {
+    margin-bottom: 20px;
+  }
   .content-section__title {
     grid-column: 1/-1;
   }
