@@ -134,7 +134,7 @@ html::-webkit-scrollbar {
 
 .heading-text {
   justify-self: end;
-  align-self: center;
+  align-self: start;
   height: fit-content;
 }
 
@@ -205,6 +205,9 @@ html::-webkit-scrollbar {
   .header, .main, .footer {
     padding: 0 10px;
   }
+  .header {
+    grid-template-rows: clamp(145px, 33.36px + 29.77vw, 262px) clamp(312px, 195.59px + 31.04vw, 434px) clamp(183px, 71.36px + 29.77vw, 300px);
+  }
   .heading {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
@@ -212,7 +215,7 @@ html::-webkit-scrollbar {
     width: clamp(355px, 346.41px + 2.29vw, 364px);
   }
   .header__theme-menu-list {
-    margin-top: clamp(75px, -36.64px + 29.77vw, 192px)
+    margin-top: clamp(75px, -36.64px + 29.77vw, 192px);
   }
   .main {
     margin: 40px 0;
