@@ -31,7 +31,6 @@ html::-webkit-scrollbar {
 
 .header {
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
   height: 100vh;
 }
 
@@ -206,7 +205,7 @@ html::-webkit-scrollbar {
     padding: 0 10px;
   }
   .header {
-    grid-template-rows: clamp(145px, 33.36px + 29.77vw, 262px) clamp(312px, 195.59px + 31.04vw, 434px) clamp(183px, 71.36px + 29.77vw, 300px);
+    grid-template-rows: clamp(173px, 61.36px + 29.77vw, 290px) clamp(312px, 195.59px + 31.04vw, 434px) clamp(183px, 71.36px + 29.77vw, 300px);
   }
   .heading {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
@@ -244,6 +243,9 @@ html::-webkit-scrollbar {
   .header, .main, .footer {
     padding: 0 20px;
   }
+  .header {
+    grid-template-rows: clamp(173px, 641.00px + -45.70vw, 290px) clamp(434px, 185.00px + 32.42vw, 517px) clamp(205px, 585.00px + -37.11vw, 300px);
+  }
   .heading {
     margin-inline-start: -20px;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
@@ -252,7 +254,7 @@ html::-webkit-scrollbar {
     width: clamp(364px, -17.00px + 49.61vw, 491px);
   }
   .header__theme-menu-list {
-    margin-top: 192px;
+    margin-top: clamp(75px, 543.00px + -45.70vw, 192px);
   }
   .main {
     margin: 60px 0;
